@@ -13,6 +13,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,5 +29,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         return cell
     }
+    
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
 }

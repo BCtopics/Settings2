@@ -74,10 +74,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="JGk-nx-iUk" id="kSY-7x-9WN"/>
-                                    <outlet property="delegate" destination="JGk-nx-iUk" id="Ms3-Vj-scb"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,6 +84,9 @@
                             <constraint firstItem="YKF-i3-nd3" firstAttribute="top" secondItem="uoU-WB-12s" secondAttribute="bottom" id="rvB-Gp-r6T"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="YKF-i3-nd3" id="gjY-H0-OSC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdX-s5-0i8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
