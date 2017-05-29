@@ -32,7 +32,7 @@ class SettingTableViewCell: UITableViewCell {
             isOnSwitch.isOn = setting.isOn
             settingLabel.text = setting.name
             settingImageView.image = setting.image
-            self.backgroundColor = setting.isOn ? UIColor.green : UIColor.blue
+            self.backgroundColor = setting.isOn ? UIColor.green : UIColor.lightGray
         }
     }
     
