@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="VtD-wJ-gPA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="VtD-wJ-gPA" customClass="SettingTableViewCell" customModule="Settings" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VtD-wJ-gPA" id="npV-fg-Msh">
@@ -49,6 +49,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ohq-57-uVT">
                                                     <rect key="frame" x="318" y="24" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchValueChanged:" destination="VtD-wJ-gPA" eventType="valueChanged" id="TAI-c6-gjk"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -64,6 +67,11 @@
                                         <constraints>
                                             <constraint firstItem="55A-AZ-DcP" firstAttribute="height" secondItem="VtD-wJ-gPA" secondAttribute="height" multiplier="0.9" id="vJq-fl-kXq"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="isOnSwitch" destination="Ohq-57-uVT" id="21v-Is-JEb"/>
+                                            <outlet property="settingImageView" destination="55A-AZ-DcP" id="Nqn-Jw-g10"/>
+                                            <outlet property="settingLabel" destination="6LX-aT-pS1" id="Yhp-4o-2XN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
