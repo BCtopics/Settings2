@@ -24,4 +24,15 @@ class SettingTableViewCell: UITableViewCell {
         
     }
     
+    //MARK: - Internal Properties
+    
+    var setting: Setting? {
+        didSet {
+            guard let setting = setting else { return }
+            isOnSwitch.isOn = setting.isOn
+            settingLabel.text = setting.name
+            settingImageView.image = setting.image
+        }
+    }
+    
 }

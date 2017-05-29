@@ -15,6 +15,7 @@ class SettingController {
     var settings: [Setting]
     
     init() {
+        // Create
         // Mock Data
         let itunesSetting = Setting(image: #imageLiteral(resourceName: "itunes"), name: "iTunes", isOn: false)
         let ibooksSetting = Setting(image: #imageLiteral(resourceName: "ibooks"), name: "iBooks", isOn: false)
@@ -22,5 +23,7 @@ class SettingController {
         
         self.settings = [itunesSetting, ibooksSetting, appsSetting]
     }
+    
+    // Update
     
 }
