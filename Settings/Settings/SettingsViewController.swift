@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SettingTableViewCellDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +24,24 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCell", for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
         
+        cell.delegate = self
         let setting = SettingController.shared.settings[indexPath.row]
         cell.setting = setting
         
         return cell
+    }
+    
+    
+    // MARK: - SettingTableviewCellDelegate
+    
+    func settingIsOnValueChanged(cell: SettingTableViewCell, selectedValue: Bool) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        let setting = SettingController.shared.settings[indexPath.row]
+        
+        SettingController.shared.updateSetting(setting: setting, valueSelected: selectedValue)
+        
+        self.tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     //MARK: - IBOutlets

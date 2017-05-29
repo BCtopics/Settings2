@@ -20,7 +20,7 @@ class SettingTableViewCell: UITableViewCell {
     
     @IBAction func switchValueChanged(_ sender: UISwitch) {
         
-        
+        delegate?.settingIsOnValueChanged(cell: self, selectedValue: isOnSwitch.isOn)
         
     }
     
@@ -32,7 +32,16 @@ class SettingTableViewCell: UITableViewCell {
             isOnSwitch.isOn = setting.isOn
             settingLabel.text = setting.name
             settingImageView.image = setting.image
+            self.backgroundColor = setting.isOn ? UIColor.green : UIColor.blue
         }
     }
+    
+    weak var delegate: SettingTableViewCellDelegate?
+    
+}
+
+protocol SettingTableViewCellDelegate: class {
+    
+    func settingIsOnValueChanged(cell: SettingTableViewCell, selectedValue: Bool)
     
 }

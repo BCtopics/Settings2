@@ -25,5 +25,9 @@ class SettingController {
     }
     
     // Update
+    func updateSetting(setting: Setting, valueSelected: Bool) {
+        
+        setting.isOn = valueSelected
+    }
     
 }
