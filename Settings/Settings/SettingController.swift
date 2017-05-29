@@ -10,9 +10,14 @@ import Foundation
 
 class SettingController {
     
+    //MARK: - Shared Instances
     static let shared = SettingController()
     
+    //MARK: - Internal Properties
+    
     var settings: [Setting]
+    
+    //MARK: - Initializers
     
     init() {
         // Create

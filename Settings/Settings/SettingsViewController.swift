@@ -17,6 +17,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
     }
     
+    //MARK: - UITableViewDataSource/Delegate
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SettingController.shared.settings.count
     }

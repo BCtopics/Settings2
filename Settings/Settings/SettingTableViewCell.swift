@@ -40,6 +40,9 @@ class SettingTableViewCell: UITableViewCell {
     
 }
 
+
+//MARK: - Custom Protocol
+
 protocol SettingTableViewCellDelegate: class {
     
     func settingIsOnValueChanged(cell: SettingTableViewCell, selectedValue: Bool)
